@@ -4,22 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HümiX Rasendünger Spezial – Jetzt Rasen retten</title>
-  <meta name="description" content="HümiX Rasendünger Spezial – 20 kg für 45 €. Für dichten, kräftigen und sattgrünen Rasen. Lieferung und auf Wunsch sofort ausstreuen." />
-  <meta name="theme-color" content="#1f5d2a" />
+  <meta name="description" content="HümiX Rasendünger Spezial – 20 kg Sack für 45 €. Für kräftigen, dichten und sattgrünen Rasen. Lieferung und auf Wunsch sofort ausstreuen." />
+  <meta name="theme-color" content="#1e5b2a" />
   <style>
     :root{
       --green:#2f7d32;
-      --green-dark:#1f5d2a;
-      --green-2:#3f9443;
-      --green-soft:#edf7ea;
+      --green-dark:#1e5b2a;
+      --green-soft:#edf7eb;
+      --green-soft-2:#e4f1e0;
       --yellow:#f2c94c;
-      --yellow-dark:#dcae22;
+      --yellow-dark:#d9ad29;
       --bg:#f5f7f2;
+      --text:#182218;
+      --muted:#607060;
       --white:#ffffff;
-      --text:#182118;
-      --muted:#617060;
-      --border:#dde8d8;
-      --shadow:0 16px 40px rgba(0,0,0,.08);
+      --border:#dbe7d7;
+      --shadow:0 12px 34px rgba(0,0,0,.08);
+      --shadow-strong:0 18px 44px rgba(0,0,0,.12);
       --radius:22px;
       --max:1180px;
     }
@@ -29,14 +30,14 @@
     body{
       margin:0;
       font-family:Arial, Helvetica, sans-serif;
-      color:var(--text);
       background:var(--bg);
+      color:var(--text);
       line-height:1.55;
     }
 
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
-    button,input,textarea{font:inherit}
+    input, textarea, select, button{font:inherit}
 
     .container{
       width:min(var(--max), calc(100% - 28px));
@@ -62,17 +63,17 @@
     header{
       position:sticky;
       top:0;
-      z-index:999;
+      z-index:1000;
       background:rgba(255,255,255,.94);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid #e8efe4;
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid #e7eee4;
     }
 
     .nav{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:16px;
+      gap:18px;
       padding:14px 0;
     }
 
@@ -81,9 +82,8 @@
       align-items:center;
       gap:12px;
       font-weight:900;
-      color:var(--green-dark);
       font-size:24px;
-      letter-spacing:.2px;
+      color:var(--green-dark);
     }
 
     .brand-badge{
@@ -100,14 +100,14 @@
 
     .menu{
       display:flex;
+      gap:22px;
       align-items:center;
-      gap:24px;
       font-weight:700;
-      color:#314131;
+      color:#2d3a2d;
     }
 
     .menu a:hover{color:var(--green)}
-    .menu .cta-mini{
+    .menu .menu-cta{
       background:var(--green-dark);
       color:#fff;
       padding:11px 16px;
@@ -119,8 +119,8 @@
       overflow:hidden;
       color:#fff;
       background:
-        linear-gradient(110deg, rgba(13,43,16,.88), rgba(34,107,42,.70)),
-        url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        linear-gradient(115deg, rgba(10,38,14,.90), rgba(32,104,42,.72)),
+        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
     }
 
     .hero::after{
@@ -139,23 +139,24 @@
       grid-template-columns:1.15fr .85fr;
       gap:32px;
       align-items:center;
-      padding:72px 0 120px;
+      padding:70px 0 120px;
     }
 
-    .eyebrow{
-      display:inline-flex;
-      gap:10px;
+    .hero-badges{
+      display:flex;
       flex-wrap:wrap;
+      gap:10px;
       margin-bottom:18px;
     }
 
-    .pill{
-      padding:9px 14px;
-      border-radius:999px;
+    .badge{
       background:rgba(255,255,255,.14);
       border:1px solid rgba(255,255,255,.18);
-      font-weight:700;
+      color:#fff;
+      padding:9px 14px;
+      border-radius:999px;
       font-size:14px;
+      font-weight:700;
       backdrop-filter:blur(6px);
     }
 
@@ -163,34 +164,32 @@
       margin:0 0 16px;
       font-size:clamp(34px, 6vw, 68px);
       line-height:1.02;
-      letter-spacing:-1.3px;
-      max-width:780px;
+      letter-spacing:-1.1px;
+      max-width:760px;
     }
 
-    .hero h1 .accent{
-      color:var(--yellow);
-    }
+    .hero h1 .accent{color:var(--yellow)}
 
     .hero p{
-      margin:0 0 26px;
+      margin:0 0 28px;
       font-size:clamp(17px, 2vw, 22px);
       max-width:720px;
-      color:rgba(255,255,255,.93);
+      color:rgba(255,255,255,.92);
     }
 
     .hero-points{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:12px;
-      max-width:700px;
       margin:0 0 28px;
+      max-width:720px;
     }
 
     .hero-point{
-      background:rgba(255,255,255,.11);
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:16px;
       padding:12px 14px;
+      border-radius:16px;
+      background:rgba(255,255,255,.11);
+      border:1px solid rgba(255,255,255,.15);
       font-weight:700;
       font-size:15px;
     }
@@ -209,26 +208,26 @@
       padding:15px 22px;
       border-radius:999px;
       font-weight:800;
-      transition:.2s ease;
       border:2px solid transparent;
+      transition:.2s ease;
       cursor:pointer;
     }
 
     .btn:hover{transform:translateY(-2px)}
     .btn-primary{
       background:var(--yellow);
-      color:#1d1d1d;
+      color:#1f1f1f;
       box-shadow:0 10px 24px rgba(242,201,76,.28);
     }
-    .btn-primary:hover{background:#f5d262}
+    .btn-primary:hover{background:#f6d665}
     .btn-outline{
-      border-color:rgba(255,255,255,.72);
       color:#fff;
+      border-color:rgba(255,255,255,.7);
       background:transparent;
     }
-    .btn-whatsapp{
+    .btn-green{
       background:#25D366;
-      color:#0d2b10;
+      color:#11361b;
       box-shadow:0 10px 24px rgba(37,211,102,.22);
     }
 
@@ -236,17 +235,17 @@
       margin-left:auto;
       max-width:430px;
       background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.18);
       border-radius:30px;
       padding:18px;
       backdrop-filter:blur(10px);
-      box-shadow:0 20px 50px rgba(0,0,0,.18);
+      box-shadow:var(--shadow-strong);
     }
 
     .offer-card-inner{
       background:#fff;
-      color:#1d231d;
       border-radius:24px;
+      color:#1b251b;
       padding:28px;
     }
 
@@ -299,15 +298,38 @@
       padding:10px 0;
       border-bottom:1px solid #edf3e8;
       font-weight:700;
-      color:#2d392c;
+      color:#2f3c2f;
     }
 
     .offer-list li:last-child{border-bottom:none}
 
-    .small-note{
-      color:var(--muted);
+    .offer-note{
       font-size:14px;
+      color:var(--muted);
       margin-top:12px;
+    }
+
+    .trustbar{
+      margin-top:-34px;
+      position:relative;
+      z-index:3;
+    }
+
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .trust-item{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      text-align:center;
+      font-weight:800;
+      color:#2a352a;
     }
 
     section{
@@ -325,36 +347,13 @@
       color:var(--green-dark);
       font-size:clamp(28px,4vw,46px);
       line-height:1.08;
-      letter-spacing:-.6px;
+      letter-spacing:-.5px;
     }
 
     .section-head p{
       margin:0;
       color:var(--muted);
       font-size:18px;
-    }
-
-    .trustbar{
-      margin-top:-34px;
-      position:relative;
-      z-index:5;
-    }
-
-    .trust-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:16px;
-    }
-
-    .trust-item{
-      background:#fff;
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      border-radius:18px;
-      padding:20px;
-      text-align:center;
-      font-weight:800;
-      color:#263226;
     }
 
     .grid-3{
@@ -377,16 +376,16 @@
       border-radius:18px;
       display:grid;
       place-items:center;
-      background:linear-gradient(135deg,#eff8ea,#d9edd3);
+      background:linear-gradient(135deg,var(--green-soft),var(--green-soft-2));
       color:var(--green-dark);
       font-size:28px;
-      margin-bottom:18px;
+      margin-bottom:16px;
     }
 
     .card h3{
       margin:0 0 10px;
-      color:#243124;
       font-size:24px;
+      color:#243124;
     }
 
     .card p{
@@ -407,8 +406,8 @@
       overflow:hidden;
       box-shadow:var(--shadow);
       background:
-        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08)),
-        url('https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        linear-gradient(rgba(0,0,0,.07), rgba(0,0,0,.07)),
+        url('https://images.unsplash.com/photo-1597848212624-e6ec2d47ecfa?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
     }
 
     .content-box{
@@ -444,7 +443,7 @@
       position:relative;
       padding-left:36px;
       font-weight:700;
-      color:#314131;
+      color:#324132;
     }
 
     .checklist li::before{
@@ -457,24 +456,25 @@
       border-radius:50%;
       display:grid;
       place-items:center;
-      background:#e7f5dd;
+      background:#e8f5de;
       color:var(--green-dark);
       font-weight:900;
     }
 
-    .problem-solution{
-      background:linear-gradient(180deg,#f2f8ef,#eef5ea);
-      border-top:1px solid #e4eee0;
-      border-bottom:1px solid #e4eee0;
+    .calc{
+      background:linear-gradient(180deg,#f0f7ec,#eef5ea);
+      border-top:1px solid #dfead9;
+      border-bottom:1px solid #dfead9;
     }
 
-    .compare{
+    .calc-wrap{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:22px;
+      gap:24px;
+      align-items:start;
     }
 
-    .compare .box{
+    .calc-card, .result-card{
       background:#fff;
       border:1px solid var(--border);
       border-radius:24px;
@@ -482,61 +482,52 @@
       box-shadow:var(--shadow);
     }
 
-    .box.bad{
-      border-color:#f0d2d2;
-      background:#fffafa;
-    }
-
-    .box.good{
-      border-color:#d7ead2;
-      background:#fbfffa;
-    }
-
-    .box h3{
+    .calc-card h3, .result-card h3{
       margin:0 0 14px;
-      font-size:26px;
       color:var(--green-dark);
+      font-size:28px;
     }
 
-    .box.bad h3{color:#8c3434}
-
-    .box ul{
-      margin:0;
-      padding-left:18px;
-      color:#425041;
-    }
-
-    .box li{margin-bottom:10px}
-
-    .testimonials{
+    .field{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
+      gap:8px;
+      margin-bottom:16px;
     }
 
-    .testimonial{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:24px;
-      padding:24px;
-      box-shadow:var(--shadow);
+    .field label{
+      font-weight:800;
+      color:#2e3b2e;
     }
 
-    .stars{
-      color:#efb629;
-      letter-spacing:2px;
-      font-size:20px;
-      margin-bottom:12px;
+    .field input, .field textarea, .field select{
+      width:100%;
+      padding:15px 16px;
+      border-radius:14px;
+      border:1px solid #d7e2d3;
+      background:#fbfdf9;
+      color:#1a241a;
     }
 
-    .testimonial p{
-      margin:0 0 16px;
-      color:#364436;
+    .result-line{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 0;
+      border-bottom:1px solid #edf3e8;
+      font-weight:700;
+      color:#304030;
     }
 
-    .testimonial strong{
+    .result-line:last-child{border-bottom:none}
+    .big-result{
+      margin-top:16px;
+      padding:16px 18px;
+      border-radius:18px;
+      background:var(--green-soft);
       color:var(--green-dark);
-      display:block;
+      font-weight:900;
+      font-size:24px;
+      text-align:center;
     }
 
     .cta-banner{
@@ -544,7 +535,7 @@
       color:#fff;
       border-radius:30px;
       padding:40px;
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-strong);
       display:grid;
       grid-template-columns:1.2fr .8fr;
       gap:26px;
@@ -584,6 +575,37 @@
 
     .cta-panel li:last-child{border-bottom:none}
 
+    .testimonials{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .testimonial{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .stars{
+      color:#efb629;
+      letter-spacing:2px;
+      font-size:20px;
+      margin-bottom:12px;
+    }
+
+    .testimonial p{
+      margin:0 0 16px;
+      color:#364536;
+    }
+
+    .testimonial strong{
+      display:block;
+      color:var(--green-dark);
+    }
+
     .faq{
       display:grid;
       gap:14px;
@@ -602,7 +624,7 @@
     summary{
       cursor:pointer;
       font-weight:800;
-      color:#273427;
+      color:#263326;
       list-style:none;
     }
 
@@ -633,8 +655,8 @@
     }
 
     .contact-card p{
-      color:var(--muted);
       margin:0 0 18px;
+      color:var(--muted);
     }
 
     .contact-list{
@@ -652,18 +674,10 @@
 
     .contact-list li:last-child{border-bottom:none}
 
-    form{
+    .form-grid{
       display:grid;
+      grid-template-columns:1fr 1fr;
       gap:14px;
-    }
-
-    input, textarea, select{
-      width:100%;
-      padding:15px 16px;
-      border-radius:14px;
-      border:1px solid #d9e4d4;
-      background:#fbfdf9;
-      color:#1a241a;
     }
 
     textarea{
@@ -671,17 +685,11 @@
       resize:vertical;
     }
 
-    .form-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
-    }
-
     .floating-actions{
       position:fixed;
       right:14px;
       bottom:14px;
-      z-index:999;
+      z-index:1001;
       display:flex;
       flex-direction:column;
       gap:10px;
@@ -700,7 +708,7 @@
     }
 
     .fab.phone{background:var(--green-dark)}
-    .fab.whatsapp{background:#25D366;color:#0d2b10}
+    .fab.whatsapp{background:#25D366;color:#0f3519}
 
     footer{
       background:#163d18;
@@ -726,17 +734,19 @@
       .menu{display:none}
       .hero-grid,
       .split,
-      .compare,
-      .testimonials,
-      .contact-grid,
+      .trust-grid,
       .grid-3,
+      .calc-wrap,
       .cta-banner,
-      .trust-grid{
+      .testimonials,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+      .form-grid,
+      .hero-points{
         grid-template-columns:1fr;
       }
       .offer-card{max-width:none}
-      .hero-points{grid-template-columns:1fr}
-      .form-grid{grid-template-columns:1fr}
       .trustbar{margin-top:-16px}
     }
 
@@ -745,6 +755,8 @@
       .hero-grid{padding:44px 0 92px}
       .card,
       .content-box,
+      .calc-card,
+      .result-card,
       .contact-card,
       .testimonial,
       .offer-card-inner{
@@ -778,9 +790,9 @@
       <nav class="menu">
         <a href="#vorteile">Vorteile</a>
         <a href="#produkt">Produkt</a>
+        <a href="#rechner">Rechner</a>
         <a href="#bewertungen">Bewertungen</a>
-        <a href="#faq">FAQ</a>
-        <a href="#kontakt" class="cta-mini">Jetzt anfragen</a>
+        <a href="#kontakt" class="menu-cta">Jetzt bestellen</a>
       </nav>
     </div>
   </header>
@@ -788,30 +800,30 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">
-          <span class="pill">20 kg Sack</span>
-          <span class="pill">45 €</span>
-          <span class="pill">Für kräftigen, grünen Rasen</span>
+        <div class="hero-badges">
+          <span class="badge">20 kg Sack</span>
+          <span class="badge">45 €</span>
+          <span class="badge">Für kräftigen, grünen Rasen</span>
         </div>
 
         <h1>HümiX Rasendünger Spezial<br><span class="accent">Jetzt Rasen retten</span></h1>
 
         <p>
-          Dein Rasen wirkt müde, lückig oder blass? Dann gib ihm genau das,
-          was ihm fehlt. HümiX Rasendünger Spezial hilft dabei, dass dein Rasen
-          wieder dichter, kräftiger und sichtbar grüner wird.
+          Dein Rasen wirkt lückig, blass oder kraftlos? Dann gib ihm genau das,
+          was ihm fehlt. HümiX Rasendünger Spezial hilft deinem Rasen dabei,
+          wieder dichter, kräftiger und sichtbar grüner zu werden.
         </p>
 
         <div class="hero-points">
-          <div class="hero-point">✓ Für private Gärten und größere Flächen</div>
+          <div class="hero-point">✓ Für private Gärten und große Flächen</div>
           <div class="hero-point">✓ Einfach anzuwenden</div>
-          <div class="hero-point">✓ Auf Wunsch Lieferung bis zu dir</div>
-          <div class="hero-point">✓ Auf Wunsch direkt ausstreuen lassen</div>
+          <div class="hero-point">✓ Lieferung auf Wunsch möglich</div>
+          <div class="hero-point">✓ Auf Wunsch direkt ausstreuen</div>
         </div>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#kontakt">Jetzt bestellen</a>
-          <a class="btn btn-whatsapp" href="https://wa.me/491234567890?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20H%C3%BCmiX%20Rasend%C3%BCnger%20Spezial." target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-primary" href="#kontakt">Jetzt anfragen</a>
+          <a class="btn btn-green" href="https://wa.me/491234567890?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20H%C3%BCmiX%20Rasend%C3%BCnger%20Spezial." target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn btn-outline" href="tel:+491234567890">Anrufen</a>
         </div>
       </div>
@@ -833,14 +845,14 @@
           </div>
 
           <ul class="offer-list">
-            <li>✓ Sorgt für sichtbar frischere Rasenflächen</li>
-            <li>✓ Unterstützt kräftigen und dichten Wuchs</li>
-            <li>✓ Ideal für beanspruchte oder schwache Flächen</li>
+            <li>✓ Sattes Grün</li>
+            <li>✓ Kräftiger Wuchs</li>
+            <li>✓ Für beanspruchte Flächen geeignet</li>
             <li>✓ Lieferung und Ausstreuen möglich</li>
           </ul>
 
           <a class="btn btn-primary" href="#kontakt" style="width:100%">Preis anfragen / bestellen</a>
-          <div class="small-note">Schnelle Anfrage auch per WhatsApp oder Telefon möglich.</div>
+          <div class="offer-note">Schnelle Anfrage auch per WhatsApp oder Telefon möglich.</div>
         </div>
       </div>
     </div>
@@ -868,50 +880,19 @@
         <div class="card">
           <div class="icon">🌿</div>
           <h3>Sattes Grün</h3>
-          <p>Dein Rasen wirkt frischer, gesünder und insgesamt gepflegter.</p>
+          <p>Dein Rasen wirkt frischer, gepflegter und insgesamt gesünder.</p>
         </div>
 
         <div class="card">
           <div class="icon">💪</div>
           <h3>Mehr Dichte</h3>
-          <p>Unterstützt einen kräftigen Wuchs und hilft dem Rasen, voller zu wirken.</p>
+          <p>Unterstützt einen kräftigen Wuchs und hilft dem Rasen voller zu wirken.</p>
         </div>
 
         <div class="card">
           <div class="icon">🚚</div>
           <h3>Bequem für dich</h3>
-          <p>Lieferung möglich und auf Wunsch direktes Ausstreuen vor Ort.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="problem-solution">
-    <div class="container">
-      <div class="section-head">
-        <h2>Kommt dir das bekannt vor?</h2>
-        <p>Viele Rasenflächen sehen nach dem Winter oder bei starker Belastung schnell schwach aus.</p>
-      </div>
-
-      <div class="compare">
-        <div class="box bad">
-          <h3>Ohne richtige Pflege</h3>
-          <ul>
-            <li>Der Rasen wirkt blass und kraftlos</li>
-            <li>Lücken und kahle Stellen fallen stärker auf</li>
-            <li>Die Fläche sieht ungepflegt aus</li>
-            <li>Wachstum bleibt schwach und ungleichmäßig</li>
-          </ul>
-        </div>
-
-        <div class="box good">
-          <h3>Mit HümiX Rasendünger Spezial</h3>
-          <ul>
-            <li>Kräftigerer Eindruck der gesamten Fläche</li>
-            <li>Unterstützt dichteres Wachstum</li>
-            <li>Schöneres, satteres Erscheinungsbild</li>
-            <li>Mehr Freude am eigenen Garten</li>
-          </ul>
+          <p>Lieferung und auf Wunsch direktes Ausstreuen vor Ort.</p>
         </div>
       </div>
     </div>
@@ -919,7 +900,7 @@
 
   <section id="produkt">
     <div class="container split">
-      <div class="image-box" aria-label="Gepflegte Rasenfläche"></div>
+      <div class="image-box" aria-label="Rasenfläche"></div>
 
       <div class="content-box">
         <h2>Das Produkt im Überblick</h2>
@@ -933,10 +914,72 @@
           <li>20 kg Sack</li>
           <li>Preis: 45 €</li>
           <li>Für private und gewerbliche Flächen geeignet</li>
-          <li>Einfach und praktisch in der Anwendung</li>
+          <li>Einfach anzuwenden</li>
           <li>Lieferung auf Wunsch möglich</li>
           <li>Auf Wunsch sofort ausstreuen</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="rechner" class="calc">
+    <div class="container">
+      <div class="section-head">
+        <h2>Bedarfsrechner</h2>
+        <p>Gib deine Rasenfläche ein und berechne grob, wie viele Säcke du brauchst.</p>
+      </div>
+
+      <div class="calc-wrap">
+        <div class="calc-card">
+          <h3>Fläche eingeben</h3>
+
+          <div class="field">
+            <label for="flaeche">Rasenfläche in m²</label>
+            <input type="number" id="flaeche" placeholder="z. B. 250" min="1" oninput="berechneBedarf()">
+          </div>
+
+          <div class="field">
+            <label for="verbrauch">Annahme Verbrauch je Sack</label>
+            <select id="verbrauch" onchange="berechneBedarf()">
+              <option value="250">1 Sack reicht für ca. 250 m²</option>
+              <option value="200">1 Sack reicht für ca. 200 m²</option>
+              <option value="150">1 Sack reicht für ca. 150 m²</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="hinweis">Hinweis</label>
+            <textarea id="hinweis" readonly>Der Rechner ist eine grobe Orientierung. Für eine genaue Empfehlung bitte kurz anfragen.</textarea>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <h3>Ergebnis</h3>
+
+          <div class="result-line">
+            <span>Rasenfläche</span>
+            <strong id="outFlaeche">-</strong>
+          </div>
+
+          <div class="result-line">
+            <span>Reichweite pro Sack</span>
+            <strong id="outVerbrauch">-</strong>
+          </div>
+
+          <div class="result-line">
+            <span>Benötigte Säcke</span>
+            <strong id="outSaecke">-</strong>
+          </div>
+
+          <div class="result-line">
+            <span>Gesamtpreis</span>
+            <strong id="outPreis">-</strong>
+          </div>
+
+          <div class="big-result" id="outEmpfehlung">
+            Bitte Fläche eingeben
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -957,7 +1000,7 @@
             <li>✅ Sofort ausstreuen möglich</li>
           </ul>
           <a class="btn btn-primary" href="#kontakt" style="width:100%;margin-bottom:10px;">Jetzt anfragen</a>
-          <a class="btn btn-whatsapp" href="https://wa.me/491234567890?text=Hallo%2C%20ich%20m%C3%B6chte%20H%C3%BCmiX%20Rasend%C3%BCnger%20Spezial%20bestellen." target="_blank" rel="noopener" style="width:100%;">Per WhatsApp schreiben</a>
+          <a class="btn btn-green" href="https://wa.me/491234567890?text=Hallo%2C%20ich%20m%C3%B6chte%20H%C3%BCmiX%20Rasend%C3%BCnger%20Spezial%20bestellen." target="_blank" rel="noopener" style="width:100%;">Per WhatsApp schreiben</a>
         </div>
       </div>
     </div>
@@ -967,7 +1010,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Das sagen Kunden</h2>
-        <p>Diese Platzhaltertexte kannst du später durch echte Kundenmeinungen ersetzen.</p>
+        <p>Diese Texte kannst du später durch echte Kundenmeinungen ersetzen.</p>
       </div>
 
       <div class="testimonials">
@@ -985,7 +1028,7 @@
 
         <div class="testimonial">
           <div class="stars">★★★★★</div>
-          <p>Vorher war der Rasen eher blass und ungleichmäßig. Jetzt wirkt die Fläche viel schöner und dichter.</p>
+          <p>Vorher war der Rasen eher blass und ungleichmäßig. Jetzt wirkt die Fläche deutlich schöner und dichter.</p>
           <strong>Hausbesitzer</strong>
         </div>
       </div>
@@ -1027,13 +1070,13 @@
     <div class="container">
       <div class="section-head">
         <h2>Jetzt anfragen oder bestellen</h2>
-        <p>Schreib uns kurz, wie viele Säcke du brauchst oder ruf direkt an.</p>
+        <p>Schreib kurz, wie viele Säcke du brauchst oder ruf direkt an.</p>
       </div>
 
       <div class="contact-grid">
         <div class="contact-card">
           <h3>Kontakt</h3>
-          <p>Hier trägst du deine echten Kontaktdaten ein.</p>
+          <p>Hier trägst du deine echten Daten ein.</p>
 
           <ul class="contact-list">
             <li><strong>Firma:</strong> HümiX</li>
@@ -1046,30 +1089,48 @@
 
         <div class="contact-card">
           <h3>Bestellanfrage senden</h3>
-          <p>Die Anfrage öffnet dein E-Mail-Programm automatisch.</p>
+          <p>Du kannst per E-Mail oder direkt per WhatsApp anfragen.</p>
 
           <form onsubmit="sendForm(event)">
             <div class="form-grid">
-              <input type="text" id="name" placeholder="Name" required>
-              <input type="tel" id="telefon" placeholder="Telefonnummer">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Name" required>
+              </div>
+              <div class="field">
+                <label for="telefon">Telefon</label>
+                <input type="tel" id="telefon" placeholder="Telefonnummer">
+              </div>
             </div>
 
             <div class="form-grid">
-              <input type="email" id="email" placeholder="E-Mail">
-              <input type="number" id="menge" placeholder="Anzahl Säcke">
+              <div class="field">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" placeholder="E-Mail">
+              </div>
+              <div class="field">
+                <label for="menge">Anzahl Säcke</label>
+                <input type="number" id="menge" placeholder="z. B. 4" min="1">
+              </div>
             </div>
 
-            <select id="service">
-              <option value="">Zusatzwunsch wählen</option>
-              <option value="Nur Lieferung">Nur Lieferung</option>
-              <option value="Lieferung und ausstreuen">Lieferung und ausstreuen</option>
-              <option value="Selbstabholung">Selbstabholung</option>
-            </select>
+            <div class="field">
+              <label for="service">Zusatzwunsch</label>
+              <select id="service">
+                <option value="">Bitte wählen</option>
+                <option value="Nur Lieferung">Nur Lieferung</option>
+                <option value="Lieferung und ausstreuen">Lieferung und ausstreuen</option>
+                <option value="Selbstabholung">Selbstabholung</option>
+              </select>
+            </div>
 
-            <textarea id="nachricht" placeholder="Deine Nachricht"></textarea>
+            <div class="field">
+              <label for="nachricht">Nachricht</label>
+              <textarea id="nachricht" placeholder="Deine Nachricht"></textarea>
+            </div>
 
             <button class="btn btn-primary" type="submit">Anfrage per E-Mail senden</button>
-            <a class="btn btn-whatsapp" id="waButton" href="#" target="_blank" rel="noopener">Anfrage per WhatsApp senden</a>
+            <a class="btn btn-green" id="waButton" href="#" target="_blank" rel="noopener">Anfrage per WhatsApp senden</a>
           </form>
 
           <p id="formMsg" style="margin:14px 0 0;color:var(--green-dark);font-weight:800;"></p>
@@ -1096,6 +1157,37 @@
   </footer>
 
   <script>
+    const sackPreis = 45;
+
+    function berechneBedarf(){
+      const flaeche = Number(document.getElementById('flaeche').value);
+      const verbrauch = Number(document.getElementById('verbrauch').value);
+
+      const outFlaeche = document.getElementById('outFlaeche');
+      const outVerbrauch = document.getElementById('outVerbrauch');
+      const outSaecke = document.getElementById('outSaecke');
+      const outPreis = document.getElementById('outPreis');
+      const outEmpfehlung = document.getElementById('outEmpfehlung');
+
+      if(!flaeche || flaeche <= 0){
+        outFlaeche.textContent = '-';
+        outVerbrauch.textContent = '-';
+        outSaecke.textContent = '-';
+        outPreis.textContent = '-';
+        outEmpfehlung.textContent = 'Bitte Fläche eingeben';
+        return;
+      }
+
+      const saecke = Math.ceil(flaeche / verbrauch);
+      const preis = saecke * sackPreis;
+
+      outFlaeche.textContent = flaeche.toLocaleString('de-DE') + ' m²';
+      outVerbrauch.textContent = 'ca. ' + verbrauch + ' m²';
+      outSaecke.textContent = saecke + ' Sack' + (saecke > 1 ? 'e' : '');
+      outPreis.textContent = preis.toLocaleString('de-DE') + ' €';
+      outEmpfehlung.textContent = 'Empfehlung: ' + saecke + ' Sack' + (saecke > 1 ? 'e' : '') + ' für ' + flaeche.toLocaleString('de-DE') + ' m²';
+    }
+
     function collectFormData(){
       const name = document.getElementById('name').value.trim();
       const telefon = document.getElementById('telefon').value.trim();
@@ -1129,6 +1221,7 @@
     });
 
     updateWhatsAppLink();
+    berechneBedarf();
 
     function sendForm(e){
       e.preventDefault();
